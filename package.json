@@ -1,8 +1,7 @@
 {
-  "name": "deskmark",
+  "name": "react-redux-generator-template",
   "version": "1.0.0",
-  "description": "an web markdown writer an docs manager based on indexeddb and build on React.",
-  "main": "index.js",
+  "description": "an template of react + redux (relate to the book <<react 全栈>>).",
   "scripts": {
     "build": "webpack -p --config webpack.prod.config.js",
     "dev": "webpack-dev-server --hot --host 0.0.0.0"
@@ -17,9 +16,9 @@
     "webpack",
     "redux"
   ],
-  "author": "vikingmute, nighca",
+  "author": "stevekeol",
   "license": "MIT",
-  "homepage": "https://github.com/vikingmute/deskmark#readme",
+  "homepage": "https://github.com/stevekeol/react-redux-generator-template#readme",
   "engines": {
     "node": ">=0.12.0"
   },
@@ -40,12 +39,13 @@
     "html-webpack-plugin": "^2.21.0",
     "node-sass": "^4.11.0",
     "sass-loader": "^3.1.2",
-    "style-loader": "^0.13.0",
+    "style-loader": "^0.13.2",
     "uuid": "^2.0.1",
     "webpack": "^3.5.2",
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
+    "antd": "^3.16.6",
     "bootstrap": "^4.0.0-beta",
     "classnames": "^2.2.5",
     "isomorphic-fetch": "^2.2.1",

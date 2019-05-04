@@ -11,6 +11,9 @@ import ItemEditor from 'components/ItemEditor';
 import Loader from 'components/Loader';
 import './style.scss';
 
+// import { DatePicker } from 'antd';
+// import 'antd/dist/antd.css';
+
 const propTypes = {
   state: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,

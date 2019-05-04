@@ -15,9 +15,9 @@ module.exports= {
     filename: 'bundle.js'
   },
   //enable dev source map
-  devtool: 'eval-source-map',
+  devtool: 'eval-source-map', //解释@1
   //enable dev server
-  devServer: {
+  devServer: { //解释@2
     historyApiFallback: true,
     hot: true
   },
@@ -30,7 +30,7 @@ module.exports= {
       {
         test: /\.jsx?$/,
         enforce: "pre",
-        loaders: ['eslint-loader'],
+        loaders: ['eslint-loader'], //解释@3
         include: APP_PATH
       },
       {
@@ -39,16 +39,15 @@ module.exports= {
         include: APP_PATH
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         loaders: ['style-loader', 'css-loader', 'sass-loader']
-      }
+      }   
     ]
   },
   plugins: [
     new HtmlwebpackPlugin({
       title: 'Deskmark app'
     }),
-    new webpack.HotModuleReplacementPlugin(),
-
+    new webpack.HotModuleReplacementPlugin(), //解释@4
   ]
 }
