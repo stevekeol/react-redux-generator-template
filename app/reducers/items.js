@@ -1,12 +1,12 @@
 /*
- * @file reducers for entries' list
+ * @file reducers for items
  */
 
-import * as ActionTypes from 'actions';
+import * as ActionTypes from '../actions';
 
 const initialState = {
   isFetching: false,
-  data: [],
+  items: [],
 };
 
 const { pendingOf, fulfilledOf } = ActionTypes;
@@ -26,10 +26,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         isFetching: false,
-        data: payload,
+        items: payload,
       };
 
     default:
       return state;
   }
 }
+

@@ -9,6 +9,8 @@
     "sourceType": "module"
   },
   "rules": {
-    "no-use-before-define": [2, "nofunc"]
+    "no-use-before-define": [2, "nofunc"],
+    'comma-dangle': 'off',
+    'no-console': 'off'
   }
 }

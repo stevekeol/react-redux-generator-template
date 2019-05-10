@@ -1,12 +1,16 @@
 /*
- * @file reducers
+ * @file main file for reducers
  */
 
 import { combineReducers } from 'redux';
-import entries from './entries';
+import items from './items';
 import editor from './editor';
+import remoteRequest from './remoteRequest';
 
-export default combineReducers({
-  entries,
+const rootReducer = combineReducers({
+  items,
   editor,
+  remoteRequest
 });
+
+export default rootReducer;

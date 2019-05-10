@@ -6,8 +6,7 @@
 
 import './style.scss';
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { PropTypes } from 'react';
 
 const propTypes = {
   item: PropTypes.object,
@@ -24,7 +23,7 @@ class ItemEditor extends React.Component {
       content: '',
     };
 
-    let saveText = item.objectId ? '保存' : '创建';
+    let saveText = item.id ? '保存' : '创建';
 
     let save = () => {
       onSave({
@@ -42,7 +41,7 @@ class ItemEditor extends React.Component {
         </div>
         <div className="edit-area">
           <input ref="title" placeholder="请填写标题" defaultValue={item.title} />
-          <textarea ref="content" placeholder="请填写内容 支持 markdown 格式" defaultValue={item.content} />
+          <textarea ref="content" placeholder="请填写内容" defaultValue={item.content} />
         </div>
       </div>
     );

@@ -2,17 +2,15 @@
  * @file component deskmark
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { PropTypes } from 'react';
 import CreateBar from 'components/CreateBar';
 import List from 'components/List';
 import ItemShowLayer from 'components/ItemShowLayer';
 import ItemEditor from 'components/ItemEditor';
-import Loader from 'components/Loader';
-import './style.scss';
 
-// import { DatePicker } from 'antd';
-// import 'antd/dist/antd.css';
+// import TestDemo from 'components/TestDemo';
+
+import './style.scss';
 
 const propTypes = {
   state: PropTypes.object.isRequired,
@@ -23,38 +21,26 @@ class Deskmark extends React.Component {
 
   componentDidMount() {
     this.props.actions.fetchEntryList();
-  }
-  checkIsLoading = (state) => {
-    // check if the list is fetching
-    const listIsFetching = state.entries.list.isFetching;
-    // check if one of the details is fetch
-    const details = state.entries.detail;
-    const oneOfDetailIsFetching = Object.keys(details).some(keyId => details[keyId].isFetching);
-    return listIsFetching || oneOfDetailIsFetching;
+    this.props.actions.fetchRemoteData();
   }
   render() {
     const { state, actions } = this.props;
     const { isEditing, selectedId } = state.editor;
-    const detailedEntries = state.entries.detail;
-    const loading = this.checkIsLoading(state);
-    const entryList = state.entries.list.data;
-    const entry = (
-      selectedId
-      && detailedEntries[selectedId]
-      && detailedEntries[selectedId].data
-    ) || null;
-    const loadingIcon = loading ? <Loader backDrop /> : '';
+    const { items } = state.items;
+    const item = items.find(
+      ({ id }) => id === selectedId
+    );
     const mainPart = isEditing
       ? (
         <ItemEditor
-          item={entry}
+          item={item}
           onSave={actions.saveEntry}
           onCancel={actions.cancelEdit}
         />
       )
       : (
         <ItemShowLayer
-          item={entry}
+          item={item}
           onEdit={actions.editEntry}
           onDelete={actions.deleteEntry}
         />
@@ -62,23 +48,25 @@ class Deskmark extends React.Component {
 
     return (
       <section className="deskmark-component">
-        <nav className="navbar navbar-dark bg-dark">
+
+        <nav className="navbar navbar-fixed-top navbar-dark bg-inverse">
           <a className="navbar-brand" href="#">Deskmark App</a>
         </nav>
-        {loadingIcon}
+
         <div className="container">
           <div className="row">
             <div className="col-md-4 list-group">
               <CreateBar onClick={actions.createNewEntry} />
               <List
-                items={entryList}
+                items={items}
                 onSelect={actions.selectEntry}
-                selectedId={selectedId}
               />
             </div>
             {mainPart}
           </div>
         </div>
+
+
       </section>
     );
   }
@@ -87,3 +75,12 @@ class Deskmark extends React.Component {
 Deskmark.propTypes = propTypes;
 
 export default Deskmark;
+
+
+// {
+/*
+  <div className="testDemo">
+    <TestDemo onClick={actions.fetchRemoteData} />
+  </div>
+*/
+// }

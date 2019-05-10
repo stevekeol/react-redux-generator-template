@@ -42,7 +42,7 @@ module.exports= {
     }),
     new ExtractTextPlugin("styles.css"), //见下方解释@2
     new HtmlwebpackPlugin({
-      title: 'Deskmark app'
+      title: 'LearnAtHome'
     })
   ]
 }
