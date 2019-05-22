@@ -47,6 +47,7 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
+    "serve": "^11.0.0",
     "antd": "^3.16.6",
     "axios": "^0.18.0",
     "bootstrap": "^4.0.0-beta",
