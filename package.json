@@ -43,24 +43,28 @@
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.2",
     "uuid": "^2.0.1",
-    "webpack": "^4.32.2",
-    "webpack-dev-server": "^3.4.1"
+    "webpack": "^3.5.2",
+    "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
     "antd": "^3.16.6",
     "axios": "^0.18.0",
     "bootstrap": "^4.0.0-beta",
     "classnames": "^2.2.5",
+    "echarts": "^4.2.1",
+    "echarts-for-react": "^2.0.15-beta.0",
     "isomorphic-fetch": "^2.2.1",
     "leancloud-storage": "^3.1.0",
     "marked": "^0.3.5",
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-redux": "^4.4.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.0",
     "redux": "^3.2.1",
     "redux-promise-middleware": "^3.0.0",
     "redux-thunk": "^1.0.3",
     "serve": "^11.0.0"
   }
 }
+
